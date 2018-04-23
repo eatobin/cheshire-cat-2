@@ -1,0 +1,14 @@
+delete /resources/public/main.js
+
+lein cljsbuild once
+- or -
+lein cljsbuild auto
+
+lein trampoline cljsbuild repl-rhino
+- or -
+lein trampoline cljsbuild repl-listen
+
+lein ring server
+
+http://localhost:3000/cat.html
+(js/alert "This is a browser connected REPL!!")
