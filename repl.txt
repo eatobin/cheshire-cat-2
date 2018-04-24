@@ -1,0 +1,17 @@
+(ns my.ns
+   (:require [cheshire.core :as json]))
+
+my.ns=> (json/generate-string {:name "Cheshire Cat" :state :grinning})
+"{\"name\":\"Cheshire Cat\",\"state\":\"grinning\"}"
+my.ns=> (json/parse-string "{\"name\":\"Cheshire Cat\",\"state\":\"grinning\"}")
+{"name" "Cheshire Cat" "state" "grinning"}
+my.ns=> (json/parse-string "{\"name\":\"Cheshire Cat\",\"state\":\"grinning\"}" true)
+{:name "Cheshire Cat" :state "grinning"}
+my.ns=>
+
+(ns my.ns
+  (:require [ring.util.response :as rr]))
+nil
+my.ns=> (rr/response {:name "Cheshire Cat" :status :grinning})
+{:body {:name "Cheshire Cat" :status :grinning} :headers {} :status 200}
+my.ns=>
